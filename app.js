@@ -7,7 +7,7 @@ const mustacheExpress = require('mustache-express');
 const parseurl = require('parseurl');
 const path = require('path');
 const session = require('express-session');
-//const data = require('./user_data.js');
+const data = require('./user_data.js');
 
 
 
