@@ -117,7 +117,7 @@ const User = models.User;
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/code_snippets');
+mongoose.connect('mongodb://localhost:27017/code_snippets');
 mongoose.Promise = require('bluebird');
 
 app.engine('mustache', mustacheExpress());
@@ -260,9 +260,9 @@ const requireLogin = function (req, res, next) {
   }
 }
 
-app.get('/secret/', requireLogin, function (req, res) {
-  res.render("secret");
-})
+//app.get('/secret/', requireLogin, function (req, res) {
+//  res.render("secret");
+//})
 
 app.listen(3000, function() {
     console.log('Successfully started express application!')
