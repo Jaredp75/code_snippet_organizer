@@ -109,7 +109,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const models = require("./models");
+const models = require("./models/models");
 const flash = require('express-flash-messages');
 const mongoose = require('mongoose');
 const expressValidator = require('express-validator');
@@ -123,7 +123,7 @@ mongoose.Promise = require('bluebird');
 app.engine('mustache', mustacheExpress());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'mustache');
-app.set('layout', 'layout');
+app.set('login', 'login');
 app.use('/static', express.static('static'));
 
 passport.use(new LocalStrategy(
@@ -167,7 +167,7 @@ app.use(session({
         instance: mongoose, // optional
         host: 'localhost', // optional
         port: 27017, // optional
-        db: 'test', // optional
+        db: 'code_snippets', // optional
         collection: 'sessions', // optional
         expire: 86400 // optional
     })

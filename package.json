@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/Jaredp75/code_snippet_organizer#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "express-flash-messages": "^0.1.1",
     "express-session": "^1.15.5",
+    "express-sessions": "^1.0.6",
     "express-validator": "^4.1.1",
     "fs": "0.0.1-security",
     "local": "^0.3.3",
