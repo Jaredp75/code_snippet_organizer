@@ -101,27 +101,28 @@
 
 
 
-const fs = require('fs'),
-const path = require('path'),
-const express = require('express'),
-const mustacheExpress = require('mustache-express'),
-const passport = require('passport'),
-const LocalStrategy = require('passport-local').Strategy,
-const session = require('express-session'),
-const bodyParser = require('body-parser'),
-const models = require("./models"),
-const flash = require('express-flash-messages'),
-const mongoose = require('mongoose'),
-const expressValidator = require('express-validator'),
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
+const mustacheExpress = require('mustache-express');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const models = require("./models");
+const flash = require('express-flash-messages');
+const mongoose = require('mongoose');
+const expressValidator = require('express-validator');
 const User = models.User;
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost:27017/code_snippets');
+mongoose.Promise = require('bluebird');
 
 app.engine('mustache', mustacheExpress());
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'mustache')
+app.set('view engine', 'mustache');
 app.set('layout', 'layout');
 app.use('/static', express.static('static'));
 
