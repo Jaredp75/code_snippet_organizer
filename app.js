@@ -109,7 +109,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const models = require("./models/models");
+const models = require("./models");
 const flash = require('express-flash-messages');
 const mongoose = require('mongoose');
 const expressValidator = require('express-validator');
@@ -117,7 +117,7 @@ const User = models.User;
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/code_snippets');
+mongoose.connect('mongodb://localhost/code_snippets');
 mongoose.Promise = require('bluebird');
 
 app.engine('mustache', mustacheExpress());
@@ -265,5 +265,5 @@ app.get('/secret/', requireLogin, function (req, res) {
 })
 
 app.listen(3000, function() {
-    console.log('Express running on http://localhost:3000/.')
+    console.log('Successfully started express application!')
 });
