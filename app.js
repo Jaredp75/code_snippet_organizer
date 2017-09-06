@@ -117,7 +117,7 @@ const User = models.User;
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/code_snippets');
+mongoose.connect('mongodb://localhost:27017/test');
 mongoose.Promise = require('bluebird');
 
 app.engine('mustache', mustacheExpress());
