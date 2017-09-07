@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Snippet Organizer Login</title>
+  <link rel="stylesheet" type="text/css" href="/public/style.css" />
+</head>
+<body>
+  <div class = "snippet-box">
+      <h2>{{title}}</h2>
+      <p><pre><code>{{body}}</code></pre></p>
+      <p class = 'written'>Primary Language: <a href = "#" id = "language-link">{{language}}</a></p>
+      {{#tags}}
+      <p class = 'snippet-tags'>{{.}}</p>
+      {{/tags}}
+      <form action = '/{{_id}}/delete' method="POST" class = 'form-buttons'>
+        <button type="submit" class = 'del-edit-btn'>Delete</button>
+      </form>
+      <form action = '/{{_id}}/edit' method="get" class = 'form-buttons'>
+        <button type = "submit" class = 'del-edit-btn'>Edit</button>
+    </div>
+
+      {{/codes}}
+    </div>
+  </body>
+  </html>
