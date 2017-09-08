@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navigation">
+    {{#user}}
+    <p><a href="/collection/">Collection</a></p>
+    <p><a href="/logout/">Logout</a></p>
+    {{/user}}
+  </div>
+  <div class="newSnippet">
+    <h2>Create a new Code Snippet</h2>
+    <form action="/create/" method="POST" id="newForm">
+      <p><input type="text" id='title' name="title" placeholder="Title: "/></p>
+      <p><textarea name="snippetBody" id="snippetBody" form="newEntry" placeholder="Code Snippet: "></textarea></p>
+      <p><textarea name = "notes" id = "notes" form =  "new-form" placeholder="Notes: "></textarea></p>
+        <select name="language">
+          <option value="js">Javascript</option>
+          <option value="react">React</option>
+          <option value="ruby">Ruby</option>
+          <option value="nodejs">Nodejs</option>
+          <option value="java">Java</option>
+          <option value="other">Other</option>
+        </select>
+        <p>
+          <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
+          <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
+          <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
+        </p>
+        <p>
+          <button type = "submit">Create</button>
+        </p>
+      </form>
+    </div>
+
+  <!-- <script src="main.js" type="text/javascript"></script> -->
+</body>
+</html>

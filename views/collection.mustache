@@ -7,12 +7,10 @@
   <link rel="stylesheet" type="text/css" href="/public/style.css" />
 </head>
 <body>
-  <div class="snippet-box">
+  <div class="navigation">
     {{#user}}
-      <div class="navigation">
-        <p><a href="/create/">Create</a></p>
-        <p><a href="/logout/">Logout</a></p>
-      </div>
+    <p><a href="/create/">Create</a></p>
+    <p><a href="/logout/">Logout</a></p>
       {{/user}}
   </div>
   {{#snippets}}

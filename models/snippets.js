@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const snippetSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    body: String,
+    snippetbody: String,
     notes: String,
     language: String,
-    tags: Array
-});
+    tags: [String]
+})
 
 
 

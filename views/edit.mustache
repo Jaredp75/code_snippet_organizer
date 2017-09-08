@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+</head>
+<body>
+  <div class = "navigation">
+      {{#user}}
+      <div><p><a href = "/collection/">My Collection</a></div>
+        <div><p><a href = "/logout/">Logout</a></p></div>
+      </div>
+        {{/user}}
+        <div class = "new-box-wrapper">
+          <div class = "newSnippet">
+            {{#snippets}}
+          <h2>Edit {{title}}</h2>
+          <form action = "/{{_id}}/edit" method="POST" id = "editForm">
+            <p><input type = "text" id = "title" name = "title" value = "{{title}}"placeholder="Title: " autofocus required/></p>
+            <p><textarea name = "snippetBody" id = "snippetBody" form =  "edit-form">{{snippetBody}}</textarea></p>
+            <p><textarea name = "notes" id = "notes" form =  "edit-form" placeholder="Notes">{{notes}}</textarea></p>
+            <p><input type="text" name="language" id="language" value = "{{language}}"placeholder="Language: " /></p>
+            <p>
+              {{#tags}}
+              <input type = "text" name = "tags" value="{{.}}" id = "tags" placeholder="Tags: "/>
+              {{/tags}}
+
+            </p>
+            <p>
+              <button type = "submit">SUBMIT</button>
+            </p>
+          </form>
+          {{/snippets}}
+        </div>
+      </div>
+<!--  <script src="main.js" type="text/javascript"></script> -->
+</body>
+</html>

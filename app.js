@@ -193,7 +193,7 @@ app.get('/login/', function(req, res) {
 });
 
 app.post('/login/', passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/collection/',
     failureRedirect: '/login/',
     failureFlash: true
 }))
@@ -263,6 +263,69 @@ const requireLogin = function (req, res, next) {
 //app.get('/secret/', requireLogin, function (req, res) {
 //  res.render("secret");
 //})
+app.get('/collection/', requireLogin, function (req, res) {
+  Snippet.find().then(function(snippets){
+    res.render("collection", {snippets:snipppets})
+  })
+});
+
+app.get('/create', requireLogin, function(req,res){
+  res.render('create');
+})
+
+app.post('/create', requireLogin, function(req,res){
+  Snippet.create({
+    "title": req.body.title,
+    "snippetBody": req.body.snippetBody,
+    "notes": req.body.notes,
+    "language": req.body.language,
+    "tags": req.body.tags
+  })
+  .then(function(snippets){
+    res.redirect('/collection/')
+  })
+})
+
+app.post('/:id/delete', requireLogin, function(req,res){
+  Snippet.deleteOne({_id:req.params.id}).then(function(snippets){
+    res.redirect('/collection/')
+  })
+})
+
+app.get("/:id/edit", requireLogin, function(req,res){
+  Snippet.findOne({_id:req.params.id}).then(function(snippets){
+    res.render('edit', {snippets:snippets})
+  })
+})
+
+app.post('/:id/edit', requireLogin, function (req,res){
+  Code.updateOne({_id:req.params.id},
+  {
+    "title": req.body.title,
+    "snippetBody": req.body.snippetBody,
+    "notes": req.body.notes,
+    "language": req.body.language,
+    "tags": req.body.tags
+  })
+  .then(function(update){
+    res.redirect('/collection/');
+  });
+});
+
+app.get('/:id', requireLogin, function(req,res){
+  Code.findOne({_id:req.params.id}).then(function(snippet){
+    res.render('individual', {snippets:snippets})
+  })
+})
+
+
+
+module.exports = app;
+
+
+
+
+
 
 app.listen(3000, function() {
     console.log('Successfully started express application!')
