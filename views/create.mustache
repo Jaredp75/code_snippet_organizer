@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+  <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta21/shoelace.css">
 </head>
 <body>
   <div class="navigation">
     {{#user}}
-    <a href = "/language/html">HTML</a> |
-    <a href = "/language/javascript">JavaScript</a> |
-    <a href = "/language/react">React</a> |
-    <a href = "/language/ruby">Ruby</a> |
-    <a href = "/language/nodejs">NodeJS</a> |
-    <a href = "/language/java">Java</a> |
-    <a href = "/language/css">CSS</a> |
-    <a href = "/language/python">Python</a> |
-    <a href = "/language/other">Other</a>
-    <p><a href="/collection/">Collection</a></p>
-    <p><a href="/logout/">Logout</a></p>
+    <a href="/language/html">HTML</a> |
+    <a href="/language/javascript">JavaScript</a> |
+    <a href="/language/react">React</a> |
+    <a href="/language/ruby">Ruby</a> |
+    <a href="/language/nodejs">NodeJS</a> |
+    <a href="/language/java">Java</a> |
+    <a href="/language/css">CSS</a> |
+    <a href="/language/python">Python</a> |
+    <a href="/language/other">Other</a><br><br>
+    <a href="/collection/">Collection</a> |
+    <a href="/logout/">Logout</a><br>
     <div><p>Hello {{ username }}</p></div>
     {{/user}}
   </div>
@@ -28,22 +29,26 @@
     <form action="/create/" method="POST" id="newForm">
       <p><input type="text" id='title' name="title" placeholder="Title: "/></p>
       <p><textarea name="snippetBody" id="snippetBody" form="newEntry" placeholder="Code Snippet: "></textarea></p>
-      <p><textarea name = "notes" id = "notes" form =  "new-form" placeholder="Notes: "></textarea></p>
+      <p><textarea name="notes" id="notes" form="new-form" placeholder="Notes: "></textarea></p>
       <select name="lang">
+      <option value="html">HTML</option>
       <option value="js">Javascript</option>
       <option value="react">React</option>
       <option value="ruby">Ruby</option>
       <option value="nodejs">Nodejs</option>
       <option value="java">Java</option>
+      <option value="css">CSS</option>
+      <option value="python">Python</option>
       <option value="other">Other</option>
+      <br>
     </select>
         <p>
-          <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
-          <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
-          <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
+          <input type="text" name="tags" id="tags" placeholder="Tags: "/><br>
+          <input type="text" name="tags" id="tags" placeholder="Tags: "/><br>
+          <input type="text" name="tags" id="tags" placeholder="Tags: "/><br>
         </p>
         <p>
-          <button type = "submit">Create</button>
+          <button type="submit">Create</button>
         </p>
       </form>
     </div>

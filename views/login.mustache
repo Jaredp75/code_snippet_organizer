@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Code Snippet Organizer</title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+  <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta21/shoelace.css">
 </head>
 <body>
-  <div class = 'nav'>
-      <div><p><a href = "/">Cancel</a></p></div>
-        <div><p><a href = "/register/">Register</a></p></div>
-    </div>
+  <div class="navigation">
+    <a href="/">Cancel</a> |
+    <a href="/register/">Register</a>
+  </div>
   <h2>Login to Code Snippet Organizer</h2>
 
   <div class="container" style="margin-top: 2rem">
@@ -31,7 +32,9 @@
           <label for="password-input">Password</label>
           <input type="password" id="password-input" name="password" placeholder="Password" class="form-control" />
         </div>
+        <p>
         <button type="submit" class="btn btn-primary">Login</button>
+        </p>
       </form>
     </div>
   </div>

@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" type="text/css" href="/public/style.css" />
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+  <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta21/shoelace.css">
 </head>
 <body>
   <div class="navigation">
     {{#user}}
-    <a href = "/language/html">HTML</a> |
-    <a href = "/language/javascript">JavaScript</a> |
-    <a href = "/language/react">React</a> |
-    <a href = "/language/ruby">Ruby</a> |
-    <a href = "/language/nodejs">NodeJS</a> |
-    <a href = "/language/java">Java</a> |
-    <a href = "/language/css">CSS</a> |
-    <a href = "/language/python">Python</a> |
-    <a href = "/language/other">Other</a>
-    <p><a href="/create/">Create</a></p>
-    <p><a href="/logout/">Logout</a></p>
+    <a href="/language/html">HTML</a> |
+    <a href="/language/javascript">JavaScript</a> |
+    <a href="/language/react">React</a> |
+    <a href="/language/ruby">Ruby</a> |
+    <a href="/language/nodejs">NodeJS</a> |
+    <a href="/language/java">Java</a> |
+    <a href="/language/css">CSS</a> |
+    <a href="/language/python">Python</a> |
+    <a href="/language/other">Other</a><br><br>
+    <a href="/create/">Create</a> |
+    <a href="/logout/">Logout</a><br>
     <div><p>Hello {{ username }}</p></div>
       {{/user}}
   </div>
@@ -28,10 +29,10 @@
   <div class="navBox">
     <h2 id = "title-link"><a href ="/snippet-sample/{{_id}}/">{{title}}</a></h2>
       <p>{{notes}}</p>
-      <p class = 'language'>Primary Language: <a href = "/language/{{language}}/" id = "language-link">{{language}}</a></p>
+      <p class='language'>Primary Language: <a href="/language/{{language}}/" id="language-link">{{language}}</a></p>
       {{#tags}}
-      <div class = "tag-format">
-      <p class = 'snippet-tags'><a href = "/tags/{{.}}/">{{.}}</a></p>
+      <div class="tag-format">
+      <p class='snippet-tags'><a href="/tags/{{.}}/">{{.}}</a></p>
       </div>
       {{/tags}}
 

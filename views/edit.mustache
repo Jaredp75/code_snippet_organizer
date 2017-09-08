@@ -4,42 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+  <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta21/shoelace.css">
 </head>
 <body>
-  <div class = "navigation">
+  <div class="navigation">
       {{#user}}
-      <a href = "/language/html">HTML</a> |
-      <a href = "/language/javascript">JavaScript</a> |
-      <a href = "/language/react">React</a> |
-      <a href = "/language/ruby">Ruby</a> |
-      <a href = "/language/nodejs">NodeJS</a> |
-      <a href = "/language/java">Java</a> |
-      <a href = "/language/css">CSS</a> |
-      <a href = "/language/python">Python</a> |
-      <a href = "/language/other">Other</a> |
-      <p><a href = "/collection/">Collection</a></p>
-      <p><a href = "/logout/">Logout</a></p>
+      <a href="/language/html">HTML</a> |
+      <a href="/language/javascript">JavaScript</a> |
+      <a href="/language/react">React</a> |
+      <a href="/language/ruby">Ruby</a> |
+      <a href="/language/nodejs">NodeJS</a> |
+      <a href="/language/java">Java</a> |
+      <a href="/language/css">CSS</a> |
+      <a href="/language/python">Python</a> |
+      <a href="/language/other">Other</a><br><br>
+      <a href="/collection/">Collection</a> |
+      <a href="/logout/">Logout</a><br>
       <div><p>Hello {{ username }}</p></div>
       </div>
         {{/user}}
-        <div class = "new-box-wrapper">
-          <div class = "newSnippet">
+        <div class="new-box-wrapper">
+          <div class="newSnippet">
             {{#snippets}}
           <h2>Edit {{title}}</h2>
-          <form action = "/{{_id}}/edit" method="POST" id = "editForm">
-            <p><input type = "text" id = "title" name = "title" value = "{{title}}"placeholder="Title: " autofocus required/></p>
-            <p><textarea name = "snippetBody" id = "snippetBody" form =  "edit-form">{{snippetBody}}</textarea></p>
-            <p><textarea name = "notes" id = "notes" form =  "edit-form" placeholder="Notes">{{notes}}</textarea></p>
+          <form action="/{{_id}}/edit/" method="POST" id="editForm">
+            <p><input type="text" id="title" name="title" value="{{title}}"placeholder="Title: " autofocus required/></p>
+            <p><textarea name="snippetBody" id="snippetBody" form="edit-form">{{snippetBody}}</textarea></p>
+            <p><textarea name="notes" id="notes" form="edit-form" placeholder="Notes">{{notes}}</textarea></p>
             <p><input type="text" name="language" id="language" value = "{{language}}"placeholder="Language: " /></p>
             <p>
               {{#tags}}
-              <input type = "text" name = "tags" value="{{.}}" id = "tags" placeholder="Tags: "/>
+              <input type="text" name="tags" value="{{.}}" id="tags" placeholder="Tags: "/>
               {{/tags}}
 
             </p>
             <p>
-              <button type = "submit">SUBMIT</button>
+              <button type="submit">SUBMIT</button>
             </p>
           </form>
           {{/snippets}}

@@ -183,6 +183,11 @@ app.use(function (req, res, next) {
   next();
 })
 
+app.get('/favicon.ico', function(req, res) {
+  res.status(204);
+})
+
+
 app.get('/', function(req, res) {
     res.render("index");
 })

@@ -4,36 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to the Code Snippet Organizer!</title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+  <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta21/shoelace.css">
 </head>
 <body>
-  <div class = 'navigation'>
+  <div class="navigation">
       {{#user}}
-      <a href = "/language/html">HTML</a> |
-      <a href = "/language/javascript">JavaScript</a> |
-      <a href = "/language/react">React</a> |
-      <a href = "/language/ruby">Ruby</a> |
-      <a href = "/language/nodejs">NodeJS</a> |
-      <a href = "/language/java">Java</a> |
-      <a href = "/language/css">CSS</a> |
-      <a href = "/language/python">Python</a> |
-      <a href = "/language/other">Other</a> |
-      <p><a href = "/collection/">Collection</a>
-      <p><a href = "/logout/">Logout</a></p>
+      <a href="/language/html">HTML</a> |
+      <a href="/language/javascript">JavaScript</a> |
+      <a href="/language/react">React</a> |
+      <a href="/language/ruby">Ruby</a> |
+      <a href="/language/nodejs">NodeJS</a> |
+      <a href="/language/java">Java</a> |
+      <a href="/language/css">CSS</a> |
+      <a href="/language/python">Python</a> |
+      <a href="/language/other">Other</a><br><br>
+      <p><a href="/collection/">Collection</a> |
+      <p><a href="/logout/">Logout</a></p><br>
       <div><p>Hello {{ username }}</p></div>
         {{/user}}
     </div>
     {{#snippets}}
-    <div class = "individualBox">
+    <div class="individualBox">
       <h2>{{title}}</h2>
-      <p><pre><code>{{snippetBody}}</code></pre></p>
-      <p class='language'>Primary Language: <a href ="/language/{{language}}/" id="language-link">{{language}}</a></p>
+      <p>{{snippetBody}}</p>
+      <p class='language'>Primary Language: <a href="/language/{{language}}/" id="language-link">{{language}}</a></p>
 
-      <form action="/{{_id}}/delete" method="POST" class ="form-buttons">
-        <button type="submit" class = 'del-edit-btn'>Delete</button>
+      <form action="/{{_id}}/delete/" method="POST" class="form-buttons">
+        <button type="submit" class='del-edit-btn'>Delete</button>
       </form>
-      <form action='/{{_id}}/edit' method="get" class = 'form-buttons'>
-        <button type="submit" class = 'del-edit-btn'>Edit</button>
+      <form action="/{{_id}}/edit/" method="get" class="form-buttons">
+        <button type="submit" class='del-edit-btn'>Edit</button>
       </form>
     </div>
 
