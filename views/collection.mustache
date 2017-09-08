@@ -7,21 +7,25 @@
   <link rel="stylesheet" type="text/css" href="/public/style.css" />
 </head>
 <body>
-  <div class = "snippet-box">
-      <h2>{{title}}</h2>
-      <p><pre><code>{{body}}</code></pre></p>
-      <p class = 'written'>Primary Language: <a href = "#" id = "language-link">{{language}}</a></p>
-      {{#tags}}
-      <p class = 'snippet-tags'>{{.}}</p>
-      {{/tags}}
-      <form action = '/{{_id}}/delete' method="POST" class = 'form-buttons'>
-        <button type="submit" class = 'del-edit-btn'>Delete</button>
-      </form>
-      <form action = '/{{_id}}/edit' method="get" class = 'form-buttons'>
-        <button type = "submit" class = 'del-edit-btn'>Edit</button>
+  <div class="snippet-box">
+    {{#user}}
+      <div class="navigation">
+        <p><a href="/create/">Create</a></p>
+        <p><a href="/logout/">Logout</a></p>
+      </div>
+      {{/user}}
+  </div>
+  {{#snippets}}
+  <div class="navBox">
+    <a href="/{{_id}}/">{{title}}</a>
+    <p>{{notes}}</p>
+    <p class='language'>Primary Language: <a href="#" id ="language-link">{{language}}</a></p>
+    {{#tags}}
+    <p class="snippet-tags">{{.}}</p>
+    {{/tags}}
+  </div>
+    {{/snippets}}
     </div>
 
-      {{/codes}}
-    </div>
   </body>
   </html>
