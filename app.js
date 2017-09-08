@@ -114,6 +114,7 @@ const flash = require('express-flash-messages');
 const mongoose = require('mongoose');
 const expressValidator = require('express-validator');
 const User = models.User;
+const Snippet = require('./models/snippets');
 
 const app = express();
 
@@ -265,7 +266,7 @@ const requireLogin = function (req, res, next) {
 //})
 app.get('/collection/', requireLogin, function (req, res) {
   Snippet.find().then(function(snippets){
-    res.render("collection", {snippets:snipppets})
+    res.render("collection", {snippets:snippets})
   })
 });
 
@@ -274,6 +275,7 @@ app.get('/create', requireLogin, function(req,res){
 })
 
 app.post('/create', requireLogin, function(req,res){
+  req.body.tags = req.body.tags.replace(/\s/g, '').split(",")
   Snippet.create({
     "title": req.body.title,
     "snippetBody": req.body.snippetBody,

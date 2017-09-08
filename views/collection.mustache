@@ -9,22 +9,23 @@
 <body>
   <div class="navigation">
     {{#user}}
-    <div><p><a href = "/language/html">HTML</a></div>
-    <div><p><a href = "/language/javascript">JavaScript</a></div>
-    <div><p><a href = "/language/react">React</a></div>
-    <div><p><a href = "/language/ruby">Ruby</a></div>
-    <div><p><a href = "/language/nodejs">NodeJS</a></div>
-    <div><p><a href = "/language/java">Java</a></div>
-    <div><p><a href = "/language/css">CSS</a></div>
-    <div><p><a href = "/language/python">Python</a></div>
-    <div><p><a href = "/language/other">Other</a></div>
+    <a href = "/language/html">HTML</a> |
+    <a href = "/language/javascript">JavaScript</a> |
+    <a href = "/language/react">React</a> |
+    <a href = "/language/ruby">Ruby</a> |
+    <a href = "/language/nodejs">NodeJS</a> |
+    <a href = "/language/java">Java</a> |
+    <a href = "/language/css">CSS</a> |
+    <a href = "/language/python">Python</a> |
+    <a href = "/language/other">Other</a>
     <p><a href="/create/">Create</a></p>
     <p><a href="/logout/">Logout</a></p>
       {{/user}}
   </div>
+  <h2>Snippet Collection</h2>
   {{#snippets}}
   <div class="navBox">
-    <h2 id = "title-link"><a href = "/code-sample/{{_id}}/">{{title}}</a></h2>
+    <h2 id = "title-link"><a href ="/snippet-sample/{{_id}}/">{{title}}</a></h2>
       <p>{{notes}}</p>
       <p class = 'language'>Primary Language: <a href = "/language/{{language}}/" id = "language-link">{{language}}</a></p>
       {{#tags}}
