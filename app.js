@@ -109,7 +109,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const models = require("./models");
+const models = require("./models/users");
 const flash = require('express-flash-messages');
 const mongoose = require('mongoose');
 const expressValidator = require('express-validator');
@@ -167,7 +167,7 @@ app.use(session({
         instance: mongoose, // optional
         host: 'localhost', // optional
         port: 27017, // optional
-        db: 'code_snippets', // optional
+        db: 'snippets', // optional
         collection: 'sessions', // optional
         expire: 86400 // optional
     })

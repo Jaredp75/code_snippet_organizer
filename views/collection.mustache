@@ -3,27 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Snippet Organizer Login</title>
+  <title></title>
   <link rel="stylesheet" type="text/css" href="/public/style.css" />
 </head>
 <body>
   <div class="navigation">
     {{#user}}
+    <div><p><a href = "/language/html">HTML</a></div>
+    <div><p><a href = "/language/javascript">JavaScript</a></div>
+    <div><p><a href = "/language/react">React</a></div>
+    <div><p><a href = "/language/ruby">Ruby</a></div>
+    <div><p><a href = "/language/nodejs">NodeJS</a></div>
+    <div><p><a href = "/language/java">Java</a></div>
+    <div><p><a href = "/language/css">CSS</a></div>
+    <div><p><a href = "/language/python">Python</a></div>
+    <div><p><a href = "/language/other">Other</a></div>
     <p><a href="/create/">Create</a></p>
     <p><a href="/logout/">Logout</a></p>
       {{/user}}
   </div>
   {{#snippets}}
   <div class="navBox">
-    <a href="/{{_id}}/">{{title}}</a>
-    <p>{{notes}}</p>
-    <p class='language'>Primary Language: <a href="#" id ="language-link">{{language}}</a></p>
-    {{#tags}}
-    <p class="snippet-tags">{{.}}</p>
-    {{/tags}}
-  </div>
-    {{/snippets}}
+    <h2 id = "title-link"><a href = "/code-sample/{{_id}}/">{{title}}</a></h2>
+      <p>{{notes}}</p>
+      <p class = 'language'>Primary Language: <a href = "/language/{{language}}/" id = "language-link">{{language}}</a></p>
+      {{#tags}}
+      <div class = "tag-format">
+      <p class = 'snippet-tags'><a href = "/tags/{{.}}/">{{.}}</a></p>
+      </div>
+      {{/tags}}
+
     </div>
+    {{/snippets}}
 
   </body>
-  </html>
+</html>

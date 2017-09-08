@@ -9,6 +9,15 @@
 <body>
   <div class="navigation">
     {{#user}}
+    <div><p><a href = "/language/html">HTML</a></div>
+    <div><p><a href = "/language/javascript">JavaScript</a></div>
+    <div><p><a href = "/language/react">React</a></div>
+    <div><p><a href = "/language/ruby">Ruby</a></div>
+    <div><p><a href = "/language/nodejs">NodeJS</a></div>
+    <div><p><a href = "/language/java">Java</a></div>
+    <div><p><a href = "/language/css">CSS</a></div>
+    <div><p><a href = "/language/python">Python</a></div>
+    <div><p><a href = "/language/other">Other</a></div>
     <p><a href="/collection/">Collection</a></p>
     <p><a href="/logout/">Logout</a></p>
     {{/user}}
@@ -19,14 +28,14 @@
       <p><input type="text" id='title' name="title" placeholder="Title: "/></p>
       <p><textarea name="snippetBody" id="snippetBody" form="newEntry" placeholder="Code Snippet: "></textarea></p>
       <p><textarea name = "notes" id = "notes" form =  "new-form" placeholder="Notes: "></textarea></p>
-        <select name="language">
-          <option value="js">Javascript</option>
-          <option value="react">React</option>
-          <option value="ruby">Ruby</option>
-          <option value="nodejs">Nodejs</option>
-          <option value="java">Java</option>
-          <option value="other">Other</option>
-        </select>
+      <select name="lang">
+      <option value="js">Javascript</option>
+      <option value="react">React</option>
+      <option value="ruby">Ruby</option>
+      <option value="nodejs">Nodejs</option>
+      <option value="java">Java</option>
+      <option value="other">Other</option>
+    </select>
         <p>
           <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
           <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
@@ -40,4 +49,4 @@
 
   <!-- <script src="main.js" type="text/javascript"></script> -->
 </body>
-</html>
+</HTML>
