@@ -275,7 +275,7 @@ app.get('/create', requireLogin, function(req,res){
 })
 
 app.post('/create', requireLogin, function(req,res){
-  req.body.tags = req.body.tags.replace(/\s/g, '').split(",")
+
   Snippet.create({
     "title": req.body.title,
     "snippetBody": req.body.snippetBody,
@@ -301,7 +301,7 @@ app.get("/:id/edit", requireLogin, function(req,res){
 })
 
 app.post('/:id/edit', requireLogin, function (req,res){
-  Code.updateOne({_id:req.params.id},
+  Snippet.updateOne({_id:req.params.id},
   {
     "title": req.body.title,
     "snippetBody": req.body.snippetBody,
@@ -315,7 +315,7 @@ app.post('/:id/edit', requireLogin, function (req,res){
 });
 
 app.get('/:id', requireLogin, function(req,res){
-  Code.findOne({_id:req.params.id}).then(function(snippet){
+  Snippet.findOne({_id:req.params.id}).then(function(snippet){
     res.render('individual', {snippets:snippets})
   })
 })
